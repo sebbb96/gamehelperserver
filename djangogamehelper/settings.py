@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v7z#_nlfh*^nm*-f_w3k9=16gu+fdjqzi+gsrt*9m_)j3-h=kp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # FOR DEV PURPOSE ONLY
 
 
 # Application definition
@@ -73,11 +73,14 @@ WSGI_APPLICATION = 'djangogamehelper.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'mypassword',
+        'HOST': 'my-postgres',
+        'PORT': '5432',
     }
 }
 
